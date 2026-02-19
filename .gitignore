@@ -1,0 +1,5 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .exe files (optional but safe for your case)
+*.exe
