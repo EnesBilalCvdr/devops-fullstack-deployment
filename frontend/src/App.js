@@ -4,7 +4,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/restaurants")
+    fetch("http://3.66.157.222:5000/restaurants")
       .then(res => res.json())
       .then(setData)
       .catch(err => console.error(err));
