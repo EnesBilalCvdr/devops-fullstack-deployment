@@ -5,9 +5,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // DevOps Tip: We use the environment variable if present, 
-  // but fallback to your EC2 IP so it works immediately.
-  const API_URL = process.env.REACT_APP_API_URL || "http://3.66.157.222:5000";
+  const API_URL = process.env.REACT_APP_API_URL || "/api";
 
   useEffect(() => {
     console.log(`Fetching from: ${API_URL}/restaurants`);
