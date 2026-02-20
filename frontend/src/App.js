@@ -4,11 +4,14 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://3.66.157.222:5000/restaurants")
+    // Use the variable from process.env, or fallback to localhost for development
+    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+    
+    fetch(`${API_URL}/restaurants`)
       .then(res => res.json())
       .then(setData)
       .catch(err => console.error(err));
-  }, []);
+}, []);
 
   return (
     <div style={{ padding: 40 }}>
