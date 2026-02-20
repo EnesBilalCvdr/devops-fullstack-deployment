@@ -1,7 +1,9 @@
 Full-Stack DevOps Deployment Project
+
 This project demonstrates a production-ready, three-tier architecture deployed on AWS EC2 using Docker and automated via GitHub Actions.
 
 🏗 Architecture Overview
+
 The system is designed with security and automation as top priorities:
 
 Reverse Proxy (Nginx): Acts as the single entry point (Port 80), routing traffic to the frontend and backend while hiding internal ports from the public internet.
