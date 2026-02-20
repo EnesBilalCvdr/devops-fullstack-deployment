@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 function App() {
   const [data, setData] = useState([]);
 
-  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  const API_URL = process.env.REACT_APP_API_URL || "http://3.66.157.222:5000";
 
-  useEffect(() => {
-    fetch(`${API_URL}/restaurants`)
-      .then((res) => res.json())
-      .then((json) => setData(json))
-      .catch((err) => console.error("Fetch error:", err));
-  }, [API_URL]);
+useEffect(() => {
+  fetch(`${API_URL}/restaurants`) 
+    .then(res => res.json())
+    .then(setData)
+    .catch(err => console.error("Connection error:", err));
+}, [API_URL]);
 
   return (
     <div style={{ padding: 40 }}>
