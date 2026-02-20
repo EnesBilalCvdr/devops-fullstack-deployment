@@ -1,5 +1,9 @@
-# Local .terraform directories
 **/.terraform/*
 
-# .exe files (optional but safe for your case)
 *.exe
+
+.env
+*.env
+.env.local
+
+node_modules/

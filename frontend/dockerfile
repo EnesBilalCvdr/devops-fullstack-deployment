@@ -1,12 +1,17 @@
-FROM node:18
+FROM node:18-alpine
+
+# This tells the Dockerfile to expect the variable from docker-compose
+ARG REACT_APP_API_URL
+# This sets it as a real environment variable for the build
+ENV REACT_APP_API_URL=$REACT_APP_API_URL
 
 WORKDIR /app
-
 COPY package*.json ./
 RUN npm install
-
 COPY . .
+RUN npm run build
 
+# If you are using 'serve' to run the build:
+RUN npm install -g serve
 EXPOSE 3000
-
-CMD ["npm", "start"]
+CMD ["serve", "-s", "build", "-l", "3000"]

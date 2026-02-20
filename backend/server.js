@@ -2,25 +2,28 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
+const PORT = process.env.PORT || 5000;
+
 app.get("/health", (req, res) => {
-  res.json({ status: "ok" });
+  res.json({ status: "ok", timestamp: new Date() });
 });
 
 app.get("/restaurants", (req, res) => {
   res.json([
-    { id: 1, name: "Pastane" },
-    { id: 2, name: "Cafe" }
+    { id: 1, name: "Kebapçı DevOps" },
+    { id: 2, name: "CI/CD Cafe" },
+    { id: 3, name: "Automation Bistro" }
   ]);
 });
+
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
-
-app.listen(5000, "0.0.0.0", () => {
-  console.log("API running on port 5000");
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server is running on port ${PORT}`);
 });
-
