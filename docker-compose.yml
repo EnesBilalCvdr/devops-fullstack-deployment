@@ -10,7 +10,7 @@ services:
   frontend:
     build:
       context: ./frontend
-      # This passes the AWS IP into the React build process
+
       args:
         - REACT_APP_API_URL=http://3.66.157.222:5000
     ports:

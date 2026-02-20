@@ -14,9 +14,9 @@ app.get("/health", (req, res) => {
 
 app.get("/restaurants", (req, res) => {
   res.json([
-    { id: 1, name: "Kebapçı DevOps" },
-    { id: 2, name: "CI/CD Cafe" },
-    { id: 3, name: "Automation Bistro" }
+    { id: 1, name: "Kebapçı" },
+    { id: 2, name: "Cafe" },
+    { id: 3, name: "Pastane" }
   ]);
 });
 
