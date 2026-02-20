@@ -11,7 +11,7 @@ app.get("/health", (req, res) => {
 
 app.get("/restaurants", (req, res) => {
   res.json([
-    { id: 1, name: "Kebapçı" },
+    { id: 1, name: "Pastane" },
     { id: 2, name: "Cafe" }
   ]);
 });
